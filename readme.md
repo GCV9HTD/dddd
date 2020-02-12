@@ -1,1 +1,1 @@
-Pcredits: Adrian @ Pyimage Search
+credits: Adrian @ Pyimage Search
