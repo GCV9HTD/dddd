@@ -32,7 +32,7 @@ ear_thresh = 0.25
 frame_thresh = 54
 
 counter = 0
-alarm_on = False
+ear = 0
 
 detector = dlib.get_frontal_face_detector()
 args["shape_predictor"] ="shape_predictor_68_face_landmarks.dat"
@@ -51,6 +51,9 @@ while True:
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     faces = detector(gray, 0)
+    if len(faces) == 0:
+        print("No faces found!")
+        cv2.putText(frame, "No faces found!", (200, 300), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
     for face in faces:
         shape = predictor(gray, face)
         shape = face_utils.shape_to_np(shape)
