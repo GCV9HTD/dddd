@@ -1,14 +1,14 @@
-from scipy.spatial import distance as dist
-from imutils.video import VideoStream
-from imutils import face_utils
+from scipy.spatial import distance as dist   #for calculating euclidean distances
+from imutils.video import VideoStream   #for image processing in OpenCV
+from imutils import face_utils  #facedetection
 from threading import Thread
-import numpy as np
-import playsound
-import argparse
+import numpy as np   #numpy array
+import playsound    #raising alarm
+import argparse #optional argument parsing
 import imutils
 import time
-import dlib
-import cv2
+import dlib     #python machine learning library
+import cv2      #openCV
 
 
 def sound_alarm(path):
@@ -29,7 +29,7 @@ def eye_aspect_ratio(eye):
 
 
 ear_thresh = 0.25
-frame_thresh = 54
+frame_thresh = 48
 
 counter = 0
 ear = 0
